@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
   $("button").click(function(){
-    $("button").addClass('started')
 
     // simulated time period for testing
     var delay = 5000
@@ -11,7 +10,7 @@ $(document).ready(function(){
       var tune = 'airhorn.mp3';
       playAudio(tune);
       console.log("playing end tune");
-      $('.play').text("Start")
+      $('.gong').text("Start")
     }, delay);
 
   })
@@ -25,7 +24,7 @@ $(document).ready(function(){
   }
 
   // plays start tune on button click
-  $('.play').click(function() {
+  $('.gong').click(function() {
     var tune = 'bellSound.mp3';
     playAudio(tune)
     console.log("playing start tune");
