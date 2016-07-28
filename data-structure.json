@@ -1,0 +1,22 @@
+[
+  {
+    "user": {
+      "id": "stuff",
+      "token": "stuff",
+      "displayName": "stuff",
+      "username": "stuff"
+    },
+    "meditations" : [
+      { "date": "stuff",
+        "from-time": "stuff",
+        "to-time": "stuff",
+        "duration": 5
+      },
+      { "date": "stuff",
+        "from-time": "stuff",
+        "to-time": "stuff",
+        "duration": 5
+      }
+    ]
+  }
+]
