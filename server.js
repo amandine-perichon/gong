@@ -7,10 +7,10 @@ var PORT = process.env.PORT || 3000
 var app = express()
 
 app.engine('hbs', hbs())
-
 app.set('view engine', 'hbs')
 app.set('views', __dirname + '/views')
 
+app.use(express.static('public'))
 
 app.get('/', routes.index)
 
