@@ -1,0 +1,32 @@
+{
+  "name": "gong",
+  "version": "0.1.0",
+  "description": "Mindfulness meditation app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "tape tests/**/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandine-perichon/gong.git"
+  },
+  "keywords": [
+    "mindfulness",
+    "meditation"
+  ],
+  "author": "Mandy & Jana & Sach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amandine-perichon/gong/issues"
+  },
+  "homepage": "https://github.com/amandine-perichon/gong#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  }
+}
