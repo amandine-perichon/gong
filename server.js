@@ -33,6 +33,7 @@ passport.serializeUser(function(user, cb) {
 })
 
 passport.deserializeUser(function(obj, cb) {
+  console.log("deserializeUser is used", obj)
   cb(null, obj);
 })
 
@@ -103,6 +104,8 @@ app.get('/', routes.index)
 app.get('/user', routes.user)
 
 app.post('/result', routes.result)
+
+app.get('/history', routes.history)
 
 // Twitter routes
 app.get('/login/twitter', passport.authenticate('twitter'))
