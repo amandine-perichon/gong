@@ -12,17 +12,25 @@
 
   <header>
     <h1>GONG</h1>
+    <a href="/login/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Sign in with Twitter</a>
   </header>
   <section class="timer">
-    <button type="button" class="gong" name="timer">Start</button>
 
+    <img class="gong" src="../styles/gong-instrument.svg"</img>
+
+
+    <i class="fa fa-play-circle" aria-hidden="true"></i> <!-- play-->
+    <i class="fa fa-pause-circle-o" aria-hidden="true"></i> <!-- pause-->
   </section>
 
   <section class="duration-picker">
-    <button type="button" class="button-up">up</button>
-    <button type="button" class="button-down">down</button>
-
+    <div class="row">
+      <p class="duration"></p>
+      <button type="button" class="button-up five columns">up</button>
+      <button type="button" class="button-down five columns">down</button>
+    </div>
   </section>
+
   <section class="logged-in">
     <button type="button" class="submit">Submit</button>
     <button type="button" class="history">History</button>

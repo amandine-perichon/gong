@@ -19,14 +19,14 @@ $(document).ready(function(){
     // console.log(d.getTime())
 
     // Play start sound
-    var startTune = 'bellSound.mp3'
+    var startTune = 'gong.mp3'
     playAudio(startTune)
     console.log("playing start tune")
     $(this).text("Stop")
 
     // execute finish audio and change text of button to 'start'
     setTimeout(function playFinishTune() {
-      var endTune = 'airhorn.mp3';
+      var endTune = 'gong.mp3';
       playAudio(endTune);
       console.log("playing end tune");
       $('.gong').text("Start")

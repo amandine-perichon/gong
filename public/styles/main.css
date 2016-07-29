@@ -1,6 +1,38 @@
 .started {
   outline: 1px solid blue;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5c9cc1;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+header h1 {
+  display: inline-block;
+  font-size: 6rem;
+}
+
+header a {
+  padding-top: 4rem;
+  color: white;
+  display: inline-block;
+}
+
+.duration {
+  font-size: 15rem;
+}
+
 .img {
     position: absolute;
     left: 0px;
@@ -8,9 +40,6 @@
     z-index: -1;
 }
 
-button.gong {
-
-}
 #display {
   color:red;
 
