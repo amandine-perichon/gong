@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000
 
 var session = require('express-session')
 var passport = require('passport')
-var TwitterStrategy = require('passport-twitter').Strategy;  
+var TwitterStrategy = require('passport-twitter').Strategy;
 var configAuth = require('./twitter')
 
 var app = express()
@@ -39,7 +39,7 @@ passport.deserializeUser(function(obj, cb) {
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new TwitterStrategy({  
+passport.use(new TwitterStrategy({
     consumerKey: configAuth.apikey,
     consumerSecret: configAuth.apisecret,
     callbackURL: configAuth.callbackUrl
@@ -57,7 +57,7 @@ passport.use(new TwitterStrategy({
           newUser.token       = token
           newUser.username    = profile.username
           newUser.displayName = profile.displayName
-          
+
           fs.readFile(__dirname + '/data.json', function (err, data) {
             if (err) {
               console.log('Something went wrong in readFile')
@@ -102,13 +102,16 @@ app.get('/', routes.index)
 // This is the logged in view
 app.get('/user', routes.user)
 
+app.post('/result', routes.result)
+
 // Twitter routes
 app.get('/login/twitter', passport.authenticate('twitter'))
 
-app.get('/login/twitter/callback', passport.authenticate('twitter', {  
+app.get('/login/twitter/callback', passport.authenticate('twitter', {
   successRedirect: '/user',
   failureRedirect: '/',
-}))
+  })
+)
 
 
 // Server is listening

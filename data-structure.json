@@ -7,15 +7,8 @@
       "username": "stuff"
     },
     "meditations" : [
-      { "date": "stuff",
-        "from-time": "stuff",
-        "to-time": "stuff",
-        "duration": 5
-      },
-      { "date": "stuff",
-        "from-time": "stuff",
-        "to-time": "stuff",
-        "duration": 5
+      { "duration": 5000000,
+        "epoch": "eifeisfhesis"
       }
     ]
   }

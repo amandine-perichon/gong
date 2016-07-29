@@ -2,11 +2,21 @@ $(document).ready(function(){
 
   // simulated time period for testing
   var delay = 120000
+  var d = new Date()
+  var epoch = d.getTime()
+  console.log(epoch)
 
 // diplays initial/default time on page
   $('.duration').text(convertToMin(delay))
 
   $(".gong").click(function(){
+
+    // var newD = new Date()
+    d = new Date()
+    epoch = d.getTime()
+    // var newEpoch = newD.getTime()
+    console.log(epoch)
+    // console.log(d.getTime())
 
     // Play start sound
     var startTune = 'bellSound.mp3'
@@ -24,14 +34,6 @@ $(document).ready(function(){
 
   })
 
-  // play audio tune
-  function playAudio(tune){
-    var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', tune);
-    audioElement.setAttribute('preload', 'auto');
-    audioElement.play();
-  }
-
 // button up increment and display
 $('.button-up').click(function(){
   if (delay < 3600000) {
@@ -48,11 +50,36 @@ $('.button-down').click(function(){
   }
 })
 
+$('.submit').click(function(){
+  console.log(delay)
+  console.log(epoch)
+  $.ajax({
+     type: 'POST',
+     url: 'http://localhost:3000/result',
+     dataType: 'json',
+     data: {
+        duration: delay,
+        epoch: epoch
+     },
+     error: function () {
+      console.log('OH NOOOOO ... POST')
+     },
+     cache: false
+  })
+})
+
+// play audio tune
+function playAudio(tune){
+  var audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', tune);
+  audioElement.setAttribute('preload', 'auto');
+  audioElement.play();
+}
+
 // convert millseconds to minutes and format
 function convertToMin(delay) {
   var min = delay/60000
   return ("0" + min.toString()).slice(-2) + ":" + "00"
 }
-
 
 })
