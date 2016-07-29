@@ -68,6 +68,22 @@ $('.submit').click(function(){
   })
 })
 
+$('.history').click(function(){
+  $.ajax({
+     type: 'GET',
+     url: 'http://localhost:3000/history',
+     dataType: 'html',
+     success: function(data) {
+       console.log(data)
+       $(".duration-picker").after(data)
+     },
+     error: function () {
+      console.log('OH NOOOOO ... History')
+     },
+     cache: false
+  })
+})
+
 // play audio tune
 function playAudio(tune){
   var audioElement = document.createElement('audio');

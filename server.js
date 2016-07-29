@@ -104,6 +104,8 @@ app.get('/user', routes.user)
 
 app.post('/result', routes.result)
 
+app.get('/history', routes.history)
+
 // Twitter routes
 app.get('/login/twitter', passport.authenticate('twitter'))
 

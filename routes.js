@@ -5,7 +5,8 @@ var data = require('./data')
 module.exports = {
   index: index,
   user: user,
-  result: result
+  result: result,
+  history: history
 }
 
 function index (req, res) {
@@ -50,4 +51,24 @@ function result (req, res) {
     })
 
   })
+}
+
+function history (req, res) {
+  console.log("From history route")
+  var userData = findUserData (req.session.passport.user.id)
+  console.log(userData)
+  res.render('history', userData, function(err, html) {
+    res.status(200).send(html);
+  })
+}
+
+function findUserData (id) {
+  var userData = data.find(function(elem, i, arr) {
+    if (elem.user.id === id) {
+      return true
+    } else {
+      return false
+    }
+  })
+  return userData
 }
