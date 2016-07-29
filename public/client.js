@@ -75,7 +75,7 @@ $('.history').click(function(){
      dataType: 'html',
      success: function(data) {
        console.log(data)
-       $(".duration-picker").after(data)
+       $(".logged-in").after(data)
      },
      error: function () {
       console.log('OH NOOOOO ... History')
