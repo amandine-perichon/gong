@@ -55,6 +55,7 @@ function result (req, res) {
 
 function history (req, res) {
   console.log("From history route")
+  console.log(req.session.passport.user.id)
   var userData = findUserData (req.session.passport.user.id)
   console.log(userData)
   res.render('history', userData, function(err, html) {

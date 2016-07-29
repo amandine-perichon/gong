@@ -33,6 +33,7 @@ passport.serializeUser(function(user, cb) {
 })
 
 passport.deserializeUser(function(obj, cb) {
+  console.log("deserializeUser is used", obj)
   cb(null, obj);
 })
 
